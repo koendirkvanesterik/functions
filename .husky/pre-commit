@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Check if all node packages are sourced from secure locations
+if grep '"resolved": "http:' package-lock.json; then
+  echo -e '\n\x1B[31mERROR: The package-lock.json file contains http urls. Please convert these to https urls.\x1B[0m\n'; exit
+fi
+
+npm run --silent test:types
+npx lint-staged

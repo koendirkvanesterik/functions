@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Forbid pushing when there are uncommited changes in Git tree
+if [[ -n `git status -s`  ]]; then
+  echo '\x1B[31mThere are uncommited changes in the tree, please stash or commit them before pushing\x1B[0m'; exit
+fi
+
+npx check-dependencies --package-manager npm
+npm run --silent test:types
+npm test -- --changedSince=origin/main

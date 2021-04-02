@@ -1,30 +1,33 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 
 import { render } from '@testing-library/react'
 
 import { Label } from './Label'
 import { LabelContext } from './LabelContext'
 
-const MockedLabels: FunctionComponent = ({ children }) => (
-  <LabelContext.Provider value={{ foo: 'Foo Bar' }}>
-    {children}
-  </LabelContext.Provider>
-)
-
 it('should render label value as expected', () => {
   const { getByText } = render(
-    <MockedLabels>
+    <LabelContext.Provider value={{ foo: 'Foo' }}>
       <Label id="foo" />
-    </MockedLabels>,
+    </LabelContext.Provider>,
   )
-  expect(getByText('Foo Bar')).toBeInTheDocument()
+  expect(getByText('Foo')).toBeInTheDocument()
+})
+
+it('should render label with replacement', () => {
+  const { getByText } = render(
+    <LabelContext.Provider value={{ bar: 'Bar {value}' }}>
+      <Label id="bar" replacements={{ value: 100 }} />
+    </LabelContext.Provider>,
+  )
+  expect(getByText('Bar 100')).toBeInTheDocument()
 })
 
 it('should render label key in case not registered', () => {
   const { getByText } = render(
-    <MockedLabels>
-      <Label id="unknown" />
-    </MockedLabels>,
+    <LabelContext.Provider value={{}}>
+      <Label id="not.registered" />
+    </LabelContext.Provider>,
   )
-  expect(getByText(/unknown/)).toBeInTheDocument()
+  expect(getByText('not.registered')).toBeInTheDocument()
 })

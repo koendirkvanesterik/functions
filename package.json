@@ -1,5 +1,7 @@
 {
-  "name": "root",
+  "name": "@koendirkvanesterik/functions",
+  "private": true,
+  "version": "0.0.0",
   "dependencies": {
     "react": "^17.0.2"
   },
@@ -42,6 +44,7 @@
       "prettier --write"
     ]
   },
+  "publish-npm": "lerna publish --skip-npm && lerna run publish-npm",
   "scripts": {
     "format": "prettier --check '**/*.{ts,tsx,json,md,js,yml}'",
     "format:fix": "prettier --write '**/*.{ts,tsx,json,md,js,yml}'",

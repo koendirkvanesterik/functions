@@ -1,11 +1,9 @@
 {
   "name": "@koendirkvanesterik/label",
-  "version": "0.0.2",
+  "author": "Koen Dirk van Esterik",
   "description": "React context provider and consumer components, in order to facilitate use of labels.",
-  "main": "index.ts",
-  "scripts": {
-    "test": "jest"
-  },
+  "version": "0.0.2",
+  "gitHead": "164b9faa9c71dacb4c3a86fa615d70bd26a7b743",
   "keywords": [
     "react",
     "context",
@@ -13,6 +11,10 @@
     "consumer",
     "label"
   ],
-  "author": "Koen Dirk van Esterik",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "index.ts",
+  "publish-npm": "npm publish --access public",
+  "scripts": {
+    "test": "jest"
+  }
 }

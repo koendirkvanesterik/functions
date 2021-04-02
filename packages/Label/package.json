@@ -2,7 +2,7 @@
   "name": "@koendirkvanesterik/label",
   "author": "Koen Dirk van Esterik",
   "description": "React context provider and consumer components, in order to facilitate use of labels.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "gitHead": "164b9faa9c71dacb4c3a86fa615d70bd26a7b743",
   "keywords": [
     "react",

@@ -1,8 +1,15 @@
 import { LabelContextProps, LabelData } from '../types'
 
+/**
+ * Small util function creating a prefix key
+ */
 export const createPrefixKey = (prefix: string, key: string): string =>
   [prefix, key].filter((_) => _).join('.')
 
+/**
+ * Recursive util function which iterates through a nested object and flattens
+ * it by creating prefix keys mapped to its label value
+ */
 export const normalizeLabelData = (
   labelData: LabelData,
   prefix = '',

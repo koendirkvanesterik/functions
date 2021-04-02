@@ -12,7 +12,7 @@ export const Label: FunctionComponent<LabelProps> = ({ id, replacements }) => {
   /**
    * Find value within labels object by given id or return id as default
    */
-  const label = labels?.[id] ?? id
+  const label = labels[id] ?? id
   /**
    * If replacements property is set, apply replacements and return processed
    * label with replacements object

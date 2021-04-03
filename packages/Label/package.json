@@ -12,7 +12,7 @@
     "label"
   ],
   "license": "ISC",
-  "main": "./dist/label.js",
+  "main": "./dist/Label.js",
   "module": "./dist",
   "publishConfig": {
     "access": "public"

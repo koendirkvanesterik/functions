@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -8,11 +9,11 @@
     "lib": ["dom", "esnext"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "noEmit": true,
-    "resolveJsonModule": true,
+    "removeComments": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "es5"
   },
+  "exclude": ["node_modules", "**/*.spec.ts"],
   "include": ["./packages/**/*"]
 }
